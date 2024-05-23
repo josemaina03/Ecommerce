@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 100%;
+    margin: auto;
+    overflow: hidden;
+}
+
+header {
+    background: antiquewhite;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.shopping {
+    position: relative;
+    cursor: pointer;
+}
+
+.shopping img {
+    width: 50px;
+}
+
+.quantity {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background: red;
+    color: #fff;
+    border-radius: 50%;
+    padding: 5px 10px;
+}
+
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 10px;
+    padding: 20px;
+    width: calc(25% - 40px);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.item img {
+    width: 50%;
+    height: auto;
+}
+
+.card {
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 400px;
+    height: 100%;
+    background: #fff;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+    transition: right 0.3s;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: antiquewhite;
+}
+
+body.active .card {
+    right: 0;
+}
+
+.card h1 {
+    margin: 0;
+}
+
+.checkOut {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.checkOut .total {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.checkOut .discount,
+.checkOut .applyDiscount,
+.checkOut .checkout,
+.checkOut .closeShopping {
+    display: block;
+    width: calc(100% - 40px);
+    margin: 10px auto;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.listCard {
+    list-style: none;
+    padding: 0;
+}
+
+.listCard li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.listCard li img {
+    width: 50px;
+    height: auto;
+}
+.user1{
+    align-items: flex-start;
+    
+    display: flex;
+    border: 1px solid black;
+    width: 70px;
+    
+}
+.user2{
+    display: flex;
+    align-items: flex-end;
+    border: 1px solid black;
+    width: 70px;
+    
+}

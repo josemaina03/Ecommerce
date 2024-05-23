@@ -1,0 +1,59 @@
+{
+  "users": [
+    {
+      "id": "bb3b",
+      "username": "jose",
+      "email": "jose@gmail.com",
+      "password": "123joseA@"
+    },
+    {
+      "id": "2ae5",
+      "username": "maggie",
+      "email": "maggiegorges@gmail.com",
+      "password": "Maggie123@"
+    },
+    {
+      "id": "a9ef",
+      "username": "kemboi",
+      "email": "kemboi@gmail.com",
+      "password": "1234Kemboi@"
+    },
+    {
+      "id": "d868",
+      "username": "karunda",
+      "email": "karunda@gmail.com",
+      "password": "123Karunda#"
+    },
+    {
+      "id": "aca5",
+      "username": "maggie",
+      "email": "jose@gmail.com",
+      "password": "Jose@1234"
+    },
+    {
+      "id": "9288",
+      "username": "davy",
+      "email": "davy@gmail.com",
+      "password": "Davy123#"
+    },
+    {
+      "id": "7cdf",
+      "username": "kemboi",
+      "email": "kemboi@gmail.com",
+      "password": "Kemboi123#"
+    },
+    {
+      "id": "1b14",
+      "username": "maggie",
+      "email": "maggie@gmail.com",
+      "password": "Maggie@123"
+    },
+    {
+      "id": "e060",
+      "username": "davy",
+      "email": "",
+      "password": "Davy@123"
+    }
+  ],
+  "products": []
+}
