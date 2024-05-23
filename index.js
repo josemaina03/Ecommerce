@@ -1,17 +1,22 @@
-
 document.addEventListener('DOMContentLoaded', function () {
-    
+
     let usedUsernames = [];
 
     
     let signupForm = document.getElementById("signup-form");
     if (signupForm) {
         signupForm.addEventListener("submit", function (event) {
-            event.preventDefault(); 
-            let username = document.getElementById("signup-username").value;
-            let email = document.getElementById("signup-email").value;
+            event.preventDefault();
+            let username = document.getElementById("signup-username").value.trim();
+            let email = document.getElementById("signup-email").value.trim();
             let password = document.getElementById("signup-password").value;
             let confirmPassword = document.getElementById("confirm-password").value;
+
+            
+            if (!email) {
+                alert("Email cannot be blank");
+                return;
+            }
 
             
             if (usedUsernames.includes(username.toLowerCase())) {
@@ -38,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 password: password
             };
 
-            window.location.href = "Login.html";
+            
             fetch("http://localhost:5500/users", {
                 method: "POST",
                 headers: {
@@ -48,19 +53,16 @@ document.addEventListener('DOMContentLoaded', function () {
             })
             .then(res => res.json())
             .then(user => {
-                alert("User added: " );
-
-                
+                alert("User added successfully!");
                 usedUsernames.push(username.toLowerCase());
-                
+                window.location.href = "Login.html";
             })
             .catch(error => {
                 console.error("Error adding user:", error);
                 alert("Error adding user. Please try again.");
             });
 
-            
-            document.getElementById("signup-form").reset();
+            signupForm.reset();
         });
     }
 
@@ -68,31 +70,24 @@ document.addEventListener('DOMContentLoaded', function () {
     let loginForm = document.getElementById("login-form");
     if (loginForm) {
         loginForm.addEventListener("submit", function (event) {
-            event.preventDefault(); 
-            let loginEmail = document.getElementById("login-email").value;
+            event.preventDefault();
+            let loginEmail = document.getElementById("login-email").value.trim();
             let loginPassword = document.getElementById("login-password").value;
 
             
-            fetch("http://localhost:5500/users") 
+            fetch("http://localhost:5500/users")
             .then(response => response.json())
             .then(data => {
-                
                 let user = data.find(user => user.email === loginEmail);
-
                 if (!user) {
                     alert("Email not found. Please sign up first.");
                     return;
                 }
-
-                
                 if (loginPassword !== user.password) {
                     alert("Incorrect password");
                     return;
                 }
-
-                
                 alert("Login successful!");
-            
                 window.location.href = "index.html";
             })
             .catch(error => {
